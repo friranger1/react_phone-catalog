@@ -1,0 +1,58 @@
+$min-tablet: 639px;
+$max-tablet: 1199px;
+
+@mixin mobile {
+  @media (max-width: #{$min-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$min-tablet}) and (max-width: #{$max-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$max-tablet + 1px}) {
+    @content;
+  }
+}
+
+@mixin animation-transition {
+  transition: all 0.3s ease;
+}
+@mixin h1 {
+  grid-column: 1 / -1;
+  font-size: 48px;
+  font-weight: $font-weight-extra-bold;
+  letter-spacing: -1%;
+  margin: 56px 0;
+  @include tablet() {
+    margin: 32px 0;
+  }
+
+  @include mobile() {
+    font-size: 32px;
+    line-height: 41px;
+    margin: 24px 0;
+  }
+}
+
+@mixin grid {
+  --column-count: 4;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), minmax(229px, 340px));
+  column-gap: 16px;
+  row-gap: 40px;
+  justify-content: center;
+
+  @include tablet() {
+    --column-count: auto-fit;
+  }
+
+  @include mobile() {
+    --column-count: 1;
+  }
+}

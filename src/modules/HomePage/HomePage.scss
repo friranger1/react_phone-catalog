@@ -1,0 +1,21 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.products {
+  max-width: 1800px;
+  margin: auto;
+
+  &__content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  &__container {
+    @include grid;
+  }
+
+  &__header {
+    @include h1;
+  }
+}

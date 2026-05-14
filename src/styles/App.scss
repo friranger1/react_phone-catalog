@@ -1,0 +1,97 @@
+@import './variables';
+
+@font-face {
+  font-family: 'Mont';
+  src: url('/fonts/Mont-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: url('/fonts/Mont-SemiBold.otf') format('opentype');
+  font-weight: 600; // Для SemiBold стандарт 600
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: url('/fonts/Mont-Bold.otf') format('opentype');
+  font-weight: 700; // Для Bold стандарт 700
+  font-style: normal;
+  font-display: swap;
+}
+
+// Применяем box-sizing ко всем элементам
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Убираем внешние и внутренние отступы у всех элементов
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// Заголовки
+h1,
+h2,
+h3,
+h4 {
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+// Базовые настройки для HTML и Body
+html {
+  // Чтобы футер можно было прижать к низу, если контента мало
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: $font-main;
+  font-weight: $font-weight-regular;
+  color: $color-primary;
+  background-color: $color-white;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; // Ссылка берет цвет текста у родителя
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%; // Картинки не вылезают за пределы контейнера
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit; // Формы используют тот же шрифт, что и всё приложение
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
