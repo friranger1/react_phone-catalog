@@ -22,20 +22,38 @@ $max-tablet: 1199px;
 @mixin animation-transition {
   transition: all 0.3s ease;
 }
+
 @mixin h1 {
   grid-column: 1 / -1;
   font-size: 48px;
   font-weight: $font-weight-extra-bold;
   letter-spacing: -1%;
-  margin: 56px 0;
+  margin-top: 56px;
   @include tablet() {
-    margin: 32px 0;
+    margin-top: 32px;
   }
 
   @include mobile() {
     font-size: 32px;
     line-height: 41px;
-    margin: 24px 0;
+    margin-top: 24px;
+  }
+}
+
+@mixin h2 {
+  grid-column: 1 / -1;
+  font-size: 32px;
+  font-weight: $font-weight-extra-bold;
+  letter-spacing: -1%;
+  line-height: 41px;
+
+  @include tablet() {
+  }
+
+  @include mobile() {
+    font-size: 22px;
+    line-height: 140%;
+    letter-spacing: 0;
   }
 }
 

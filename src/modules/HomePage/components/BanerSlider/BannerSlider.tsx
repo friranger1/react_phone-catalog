@@ -1,13 +1,14 @@
-import './BanerSlider.scss';
+import './BannerSlider.scss';
 import React from 'react';
 
 export const BannerSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const images = [
-    '/img/imageSlider/Banner 01.png',
-    '/img/imageSlider/Banner 02.png',
-    '/img/imageSlider/Banner 03.png',
+    'img/imageSlider/Banner 01.png',
+    'img/imageSlider/Banner 02.png',
+    'img/imageSlider/Banner 03.png',
   ];
+
   let touchStart = 0;
   let touchEnd = 0;
 
@@ -36,7 +37,7 @@ export const BannerSlider: React.FC = () => {
       prevSlide();
     }
   };
-  
+
   return (
     <section className="slider">
       <div className="slider__container">

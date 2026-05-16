@@ -2,9 +2,14 @@
 @import '@/styles/mixins';
 
 .slider {
-  @include mobile {
-    margin: 0 -16px;
+  margin-top: 56px;
+  @include tablet {
+    margin-top: 32px;
   }
+  @include mobile {
+    margin: 24px -16px 0 -16px;
+  }
+
   &__container {
     width: 100%;
     display: flex;
@@ -24,7 +29,7 @@
   &__window {
     flex-grow: 1;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0;
     position: relative;
     touch-action: pan-y;
   }
@@ -32,10 +37,8 @@
   &__images {
     display: flex;
     box-sizing: border-box;
-
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
 
     @include mobile {
       aspect-ratio: 1 / 1;
@@ -92,7 +95,7 @@
     @include animation-transition;
 
     &--active {
-      background-color: $color-primary; // Твой основной темный цвет
+      background-color: $color-primary;
     }
 
     &:hover:not(&--active) {
